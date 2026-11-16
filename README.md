@@ -2,6 +2,16 @@
 
 Search every UK company licensed to sponsor work visas, using the official Home Office register.
 
+## Streamlit version (live app)
+`app.py` is a Python/Streamlit version with search, filters, a results table, CSV download and charts.
+
+Run it locally:
+```
+pip install -r requirements.txt
+streamlit run app.py
+```
+Deploy: [share.streamlit.io](https://share.streamlit.io) → Create app → this repo, branch `main`, main file `app.py`.
+
 ## Files
 | File | What it does |
 |---|---|
