@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Visa Sponsor Finder</title>
+  <meta name="description" content="Search UK companies licensed to sponsor work visas, using the official Home Office register.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>UK Visa Sponsor Finder</h1>
+      <p class="tagline">Search every UK company licensed to sponsor work visas, using the official Home Office register.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Shown when we are using sample data instead of the real list -->
+    <div id="banner" class="banner" hidden></div>
+
+    <!-- Search and filters -->
+    <section class="filters" aria-label="Search filters">
+      <div class="field grow">
+        <label for="search">Company name</label>
+        <input id="search" type="search" placeholder="e.g. Deloitte, NHS, Tesco" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="city">City or county</label>
+        <input id="city" type="search" placeholder="e.g. London" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="route">Visa route</label>
+        <select id="route">
+          <option value="">All routes</option>
+        </select>
+      </div>
+      <div class="checks">
+        <label><input id="aOnly" type="checkbox"> A-rated only</label>
+        <label><input id="favOnly" type="checkbox"> My saved companies</label>
+      </div>
+    </section>
+
+    <p id="count" class="count">Loading sponsor list…</p>
+
+    <!-- Company cards go here -->
+    <section id="results" class="results" aria-live="polite"></section>
+
+    <div class="more">
+      <button id="loadMore" hidden>Show more</button>
+    </div>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Data: <a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers" target="_blank" rel="noopener">Register of licensed sponsors: workers</a> (GOV.UK, Open Government Licence). Always check the official register before applying.</p>
+  </footer>
+
+  <!-- PapaParse reads CSV files for us -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
